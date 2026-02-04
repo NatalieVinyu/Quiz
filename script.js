@@ -71,6 +71,8 @@ let score = 0;
 let answered = false;
 
 //DOM ELEMENTS
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("start")
 const homeScreen = document.getElementById("home");
 const quizScreen = document.getElementById("quiz");
 const resultsScreen = document.getElementById("results");
@@ -84,6 +86,12 @@ const progressFill = document.getElementById("progress-fill");
 
 const scoreEl = document.getElementById("score");
 const percentageEl = document.getElementById("percentage");
+
+//START SCREEN BEFORE QUIZ
+startBtn.addEventListener("click", () => {
+    startScreen.classList.remove("active");
+    homeScreen.classList.add("active");
+})
 
 //START QUIZ WHEN CARD IS CLICKED
 document.querySelectorAll(".card").forEach(card=> {
