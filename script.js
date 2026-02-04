@@ -23,12 +23,12 @@ class Question {
 const bookQuiz = [
     new Question(
         "Who wrote 'Romeo and Juliet'?",
-        ["Willliam Shakespeare", "Jane Austen", "Charles Dickens", "Mark Twain"],
+        ["William Shakespeare", "Jane Austen", "Charles Dickens", "Mark Twain"],
         "William Shakespeare"
     ),
     new Question(
         "Which novel starts with 'Call me Ishmael'?",
-        ["Mobby-Dick", "Dracula", "Frankenstein", "The Great Gatsby"],
+        ["Moby-Dick", "Dracula", "Frankenstein", "The Great Gatsby"],
         "Moby-Dick"
     ),
     new Question(
@@ -38,7 +38,7 @@ const bookQuiz = [
     ),
     new Question(
         "Which book features a wizard named Gandalf?",
-        ["The Hobbit", "Harry Potter", "Percy Jackson", "Eragaon"],
+        ["The Hobbit", "Harry Potter", "Percy Jackson", "Eragan"],
         "The Hobbit"
     ),
     new Question(
@@ -75,3 +75,118 @@ const flagQuiz = [
       "France"
     ),
   ];
+//STATE VARIABLES
+let questions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let answered = false;
+
+//DOM ELEMENTS
+const homeScreen = document.getElementById("home");
+const quizScreen = document.getElementById("quiz");
+const resultsScreen = document.getElementById("results");
+
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers")
+const nextBtn = document.getElementById("nextBtn");
+
+const progressText = document.getElementById("progress-text");
+const progressFill = document.getElementById("progress-fill");
+
+const scoreEl = document.getElementById("score");
+const percentageEl = document.getElementById("percentage");
+
+//START QUIZ WHEN CARD IS CLICKED
+document.querySelectorAll(".card").forEach(card=> {
+    card.addEventListener("click", () => {
+        const quizType = card.dataset.quiz;
+
+        if (quizType === "books") {
+            startQuiz(bookQuiz);
+        }
+        if (quizType === "flags") {
+            startQuiz(flagQuiz);
+        }
+});
+});
+
+//START QUIZ 
+function startQuiz (selectedQuestions) {
+    questions = selectedQuestions;
+    currentQuestionIndex = 0;
+    score = 0;
+
+    homeScreen.classList.remove("active");
+    quizScreen.classList.add("active");
+
+    showQuestion();
+}
+
+//DISPLAY QUESTION
+function showQuestion(){
+    answered = false;
+    nextBtn.disabled = true;
+    answersEl.innerHTML = "";
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionEl.textContent = currentQuestion.text;
+
+    progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    progressFill.style.width =
+    ((currentQuestionIndex + 1)/ questions.length) * 100 + "%";
+
+    currentQuestion.choices.forEach(choice => {
+        const button = document.createElement("button");
+        button.classList.add("answer-btn");
+        button.textContent = choice;
+
+        button.addEventListener("click", () => selectAnswer(button, choice));
+
+        answersEl.appendChild(button);
+    });
+}
+
+//HANDLE ANSWER SELECTION
+function selectAnswer(button, choice) {
+    if (answered) return;
+    answered = true;
+
+    const correct = questions [currentQuestionIndex].checkAnswer(choice);
+
+    if (correct) {
+        button.classList.add("correct");
+        score++;
+    } else {
+        button.classList.add("wrong");
+    }
+    //Highlight correct answer 
+    document.querySelectorAll(".answer-btn").forEach(btn => {
+        if (btn.textContent === questions [currentQuestionIndex].answer){
+            btn.classList.add("correct");
+        }
+        btn.disabled =true;
+    });
+    nextBtn.disabled = false;
+}
+
+//NEXT QUESTION
+nextBtn.addEventListener("click", () => {
+    if (!answered) return;
+    
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        showQuestion ();
+    } else {
+        showResults ();
+    }
+});
+
+//SHOW RESULTS
+function showResults () {
+    quizScreen.classList.remove("active");
+    resultsScreen.classList.add("active");
+
+    scoreEl.textContent = `You scored ${score} out of ${questions.length}`;
+    percentageEl.textContent = `${Math.round((score / questions.length) * 100)}%`;
+}
