@@ -101,7 +101,7 @@ document.querySelectorAll(".card").forEach(card=> {
     card.addEventListener("click", () => {
         const quizType = card.dataset.quiz;
 
-        if (quizType === "books") {
+        if (quizType === "literature") {
             startQuiz(bookQuiz);
         }
         if (quizType === "flags") {
