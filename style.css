@@ -11,11 +11,11 @@ body {
 }
 
 .screen {
-  display: block;
+  display: none;
 }
 
 .screen.active {
-  display: none;
+  display: block;
 }
 
 .quiz-grid {
