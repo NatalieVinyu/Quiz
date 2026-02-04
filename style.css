@@ -10,6 +10,14 @@ body {
   text-align: center;
 }
 
+.screen {
+  display: block;
+}
+
+.screen.active {
+  display: block;
+}
+
 .quiz-grid {
   display: flex;
   gap: 20px;
