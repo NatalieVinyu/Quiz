@@ -56,12 +56,12 @@ const flagQuiz = [
     new Question(
       "Which country's flag has red and white stripes with a blue square and stars?",
       ["Canada", "United States of America", "France", "Chile"],
-      "France"
+      "United States of America"
     ),
     new Question(
       "Where does tacos originate from?",
       ["🇲🇽 Mexico", "🇧🇿 Belize", "🇬🇹 Guatemala", "🇵🇪 Peru"],
-      "France"
+      "🇲🇽 Mexico"
     ),
   ];
 //STATE VARIABLES
