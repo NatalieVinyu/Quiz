@@ -36,3 +36,31 @@ const bookQuiz = [
         "Hogwarts"
     )
 ];
+ // FLAGS (GEOGRAPHY) QUESTIONS
+const flagQuiz = [
+    new Question(
+        "Which country has a red flag with a white cross? ",
+        ["Switzerland", "Denmark", "Sweden", "Norway"],
+        "Switzerland"
+    ),
+    new Question(
+      "In which country is home to The Eiffel Tower",
+      ["Russia", "France", "Netherlands", "Luxembourg"],
+      "France"
+    ),
+    new Question(
+      "Where can you visit the Great Wall?",
+      ["🇻🇳", "🇨🇳", "🇰🇷", "🇲🇳"],
+      "🇨🇳"
+    ),
+    new Question(
+      "Which country's flag has red and white stripes with a blue square and stars?",
+      ["Canada", "United States of America", "France", "Chile"],
+      "France"
+    ),
+    new Question(
+      "Where does tacos originate from?",
+      ["🇲🇽 Mexico", "🇧🇿 Belize", "🇬🇹 Guatemala", "🇵🇪 Peru"],
+      "France"
+    ),
+  ];
