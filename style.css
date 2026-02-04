@@ -4,10 +4,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.screen h1 {
-  font-size: 50px;
-  text-align: center;
+.container{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding: 40px;
 }
 
 .screen {
@@ -16,6 +17,23 @@ body {
 
 .screen.active {
   display: block;
+  text-align: center;
+}
+
+.screen.active h1 {
+  margin: 0 20px;
+  font-size: 50px;
+}
+
+.screen.active p {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.startBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .quiz-grid {
