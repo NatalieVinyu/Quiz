@@ -5,3 +5,13 @@ body {
   align-items: center;
 }
 
+.screen h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.quiz-grid {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
