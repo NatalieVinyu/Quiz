@@ -41,3 +41,37 @@ body {
   gap: 20px;
   width: 100%;
 }
+
+#home .subtitle {
+  font-size: 30px;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+button.answer-btn {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#nextBtn {
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#nextBtn:disabled {
+  cursor: not-allowed;
+}
