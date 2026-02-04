@@ -1,14 +1,3 @@
-// START SCREEN
-const startBtn = document.getElementById('startBtn');
-const startScreen = document.getElementById('start');
-const homeScreen = document.getElementById('home');
-
-startBtn.addEventListener('click', () => {
-  startScreen.classList.remove('active');
-  homeScreen.classList.add('active')
-})
-
-
 class Question {
     constructor(text, choices, answer) {
       this.text = text;
