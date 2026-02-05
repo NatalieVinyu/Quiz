@@ -42,6 +42,17 @@ body {
   width: 100%;
 }
 
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.classTimer {
+  
+}
+
 #home .subtitle {
   font-size: 30px;
   margin: 0;
