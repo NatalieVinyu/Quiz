@@ -69,6 +69,8 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
+let timeLeft = 15;
+let timerInterval = null;
 
 //DOM ELEMENTS
 const startBtn = document.getElementById("startBtn");
@@ -86,6 +88,7 @@ const progressFill = document.getElementById("progress-fill");
 
 const scoreEl = document.getElementById("score");
 const percentageEl = document.getElementById("percentage");
+const timeEl = document.getElementByID ("time");
 
 //START SCREEN BEFORE QUIZ
 startBtn.addEventListener("click", () => {
@@ -141,11 +144,43 @@ function showQuestion(){
 
         answersEl.appendChild(button);
     });
+    startTimer();
+}
+
+//TIMER 
+function startTimer () {
+    clearInterval(timerInterval);
+    timeLeft = 15;
+    time.El.textContent = timeLeft;
+
+    timerInterval = setInterval(() => {
+        timeLeft --;
+        timeEl.textContent = timeLeft;
+
+        if (timeLeft === 0) {
+            clearInterval (timerInterval);
+            lockQuestion();
+        }
+    }, 1000);
+}
+
+function lockQuestion () {
+    answered = true; 
+
+    document.querySelectorAll (".answer-btn").forEach (btn => {
+        if (btn.textContent === questions [currentQuestionIndex].answer) {
+            btn.classList.add ("correct");
+        }
+        btn.disabled = true;
+    });
+
+    nextBtn.disabled = false;
 }
 
 //HANDLE ANSWER SELECTION
 function selectAnswer(button, choice) {
     if (answered) return;
+    clearInterval(timerInterval);
     answered = true;
 
     const correct = questions [currentQuestionIndex].checkAnswer(choice);
