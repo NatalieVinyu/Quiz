@@ -1,10 +1,14 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 :root {
   --primary-color: #151b54;
   --secondary-color: #123456;
+  --tertiary-color: #DAEDF5;
   --button-bg-color: #29465b;
   --button-bg-hover-color: #36454f;
-  --tertiary-color: #97adba;
-  --button-text-color: #fff;
+  --bg-color: #fff;
 }
 
 body {
@@ -18,7 +22,6 @@ body {
 }
 
 .container{
-  border: 2px solid var(--border-color);
   border-radius: 10px;
   width: 600px;
   height: 450px;
@@ -27,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .screen {
@@ -53,11 +56,12 @@ body {
 }
 
 .startBtn {
+  border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  color: var(--bg-color);
 }
 
 .quiz-grid {
@@ -71,6 +75,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.timer {
+  border-radius: 20px;
+  background-color: var(--tertiary-color);
+  padding: 10px;
+  color: var(--primary-color);
+}
+
+.timer.fa-solid {
+  padding-right: 10px;
 }
 
 hr {
@@ -94,11 +109,10 @@ hr {
 }
 
 .card {
-  border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  color: var(--bg-color);
   cursor: pointer;
 }
 
@@ -109,6 +123,9 @@ hr {
 }
 
 button.answer-btn {
+  /*border: 1px ;*/
+  border-radius: 10px;
+  background-color: var(--bg-color);
   padding: 10px 20px;
   width: 100%;
   max-width: 500px;
@@ -121,7 +138,7 @@ button.answer-btn {
   padding: 10px;
   cursor: pointer;
   background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  color: var(--bg-color);
 }
 
 #nextBtn:disabled {
@@ -133,5 +150,6 @@ button.answer-btn {
   margin-right: 20px;
   padding: 10px;
   background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  color: var(--bg-color);
+  cursor: pointer;
 }

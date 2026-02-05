@@ -45,12 +45,12 @@ const flagQuiz = [
     ),
     new Question(
       "In which country is home to The Eiffel Tower",
-      ["Russia", "France", "Netherlands", "Luxembourg"],
+      ["Russia", "Netherlands", "France", "Luxembourg"],
       "France"
     ),
     new Question(
       "Where can you visit the Great Wall?",
-      ["🇻🇳", "🇨🇳", "🇰🇷", "🇲🇳"],
+      ["🇻🇳", "🇲🇳", "🇨🇳", "🇰🇷"],
       "🇨🇳"
     ),
     new Question(
@@ -60,7 +60,7 @@ const flagQuiz = [
     ),
     new Question(
       "Where does tacos originate from?",
-      ["🇲🇽 Mexico", "🇧🇿 Belize", "🇬🇹 Guatemala", "🇵🇪 Peru"],
+      ["🇧🇿 Belize", "🇬🇹 Guatemala", "🇵🇪 Peru", "🇲🇽 Mexico"],
       "🇲🇽 Mexico"
     ),
   ];
@@ -68,7 +68,7 @@ const flagQuiz = [
   const generalQuiz = [
     new Question(
         "What is the capital of Autralia?",
-        ["Sydney", "Melbourbe", "Canberra", "Perth"],
+        ["Sydney", "Melbourne", "Canberra", "Perth"],
         "Canberra"
     ),
     new Question(
@@ -78,7 +78,7 @@ const flagQuiz = [
     ),
     new Question(
         "Which planet is known as the Red Planet?",
-    ["venus", "Mars", "Jupiter", "Saturn"],
+    ["Venus", "Mars", "Jupiter", "Saturn"],
     "Mars"
     ),
     new Question(
