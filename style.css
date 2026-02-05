@@ -1,14 +1,25 @@
 body {
-  min-height: 80vh;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container{
   border: 2px solid black;
   border-radius: 10px;
-  padding-top: 20px;
-  padding: 40px;
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .screen {
@@ -18,10 +29,10 @@ body {
 .screen.active {
   display: block;
   text-align: center;
+  align-items: center;
 }
 
 .screen.active h1 {
-  margin: 0 20px;
   font-size: 50px;
 }
 
@@ -46,11 +57,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-}
-
-.classTimer {
-  
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 #home .subtitle {
