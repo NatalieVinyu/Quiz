@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #151b54;
+  --secondary-color: #123456;
+  --button-bg-color: #29465b;
+  --button-bg-hover-color: #36454f;
+  --tertiary-color: #97adba;
+  --button-text-color: #fff;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -5,31 +14,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-color);
 }
 
 .container{
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   border-radius: 10px;
-  padding: 10px;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 450px;
   box-sizing: border-box;
   overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  background-color: white;
 }
 
 .screen {
   display: none;
+  margin: 30px;
 }
 
 .screen.active {
   display: block;
-  text-align: center;
-  align-items: center;
 }
 
 .screen.active h1 {
@@ -41,14 +48,21 @@ body {
   font-size: 20px;
 }
 
+#start, #home, #results {
+  text-align: center;
+}
+
 .startBtn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
 }
 
 .quiz-grid {
   display: flex;
+  justify-content: center;
   gap: 20px;
   width: 100%;
 }
@@ -57,28 +71,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+}
+
+hr {
+  border: 1px solid var(--secondary-color);
 }
 
 .content-wrapper {
-  flex: 1;
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  margin-bottom: 15px;
 }
 
-#home .subtitle {
-  font-size: 30px;
+#home .subtitle,
+#results h2 {
+  font-size: 45px;
   margin: 0;
   padding-bottom: 30px;
 }
 
 #question {
-  text-align: center;
-  word-wrap: break-word;
   overflow-wrap: break-word;
   padding-bottom: 10px;
 }
@@ -87,6 +97,8 @@ body {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   cursor: pointer;
 }
 
@@ -94,22 +106,32 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  align-items: center;
 }
 
 button.answer-btn {
   padding: 10px 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   cursor: pointer;
+  text-align: left;
 }
 
 #nextBtn {
   margin-top: 20px;
   padding: 10px;
   cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
 }
 
 #nextBtn:disabled {
   cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.actions button {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
 }
