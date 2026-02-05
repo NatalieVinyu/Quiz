@@ -151,7 +151,7 @@ function showQuestion(){
 function startTimer () {
     clearInterval(timerInterval);
     timeLeft = 15;
-    time.El.textContent = timeLeft;
+    timeEl.textContent = timeLeft;
 
     timerInterval = setInterval(() => {
         timeLeft --;
