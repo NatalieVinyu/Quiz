@@ -64,6 +64,34 @@ const flagQuiz = [
       "🇲🇽 Mexico"
     ),
   ];
+//GENERAL KNOWLEDGE QUESTIONS
+  const generalQuiz = [
+    new Question(
+        "What is the capital of Autralia?",
+        ["Sydney", "Melbourbe", "Canberra", "Perth"],
+        "Canberra"
+    ),
+    new Question(
+        "How many continents are there on Earth?",
+        ["5", "6", "7", "8"],
+        "7"
+    ),
+    new Question(
+        "Which planet is known as the Red Planet?",
+    ["venus", "Mars", "Jupiter", "Saturn"],
+    "Mars"
+    ),
+    new Question(
+        "What is the largest ocean on Earth?",
+        ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        "Pacific Ocean"
+    ),
+    new Question(
+        "Which language is the most spoken in the world?",
+    ["English", "Spanish", "Chinese", "French"],
+    "Chinese"
+    ),
+  ];
 //STATE VARIABLES
 let questions = [];
 let currentQuestionIndex = 0;
@@ -106,6 +134,9 @@ document.querySelectorAll(".card").forEach(card=> {
         }
         if (quizType === "flags") {
             startQuiz(flagQuiz);
+        }
+         if (quizType === "general") {
+            startQuiz(generalQuiz);
         }
 });
 });
