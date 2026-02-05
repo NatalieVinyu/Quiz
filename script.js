@@ -88,7 +88,7 @@ const progressFill = document.getElementById("progress-fill");
 
 const scoreEl = document.getElementById("score");
 const percentageEl = document.getElementById("percentage");
-const timeEl = document.getElementByID ("time");
+const timeEl = document.getElementById ("time");
 
 //START SCREEN BEFORE QUIZ
 startBtn.addEventListener("click", () => {
