@@ -33,6 +33,7 @@ A web-based interactive quiz game application that tests users' knowledge across
 ├── index.html       # Main HTML file with page structure
 ├── script.js        # JavaScript logic and quiz questions
 ├── style.css        # Styling and layout
+```
 
 ## File Descriptions
 
