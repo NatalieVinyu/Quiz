@@ -44,7 +44,7 @@ const flagQuiz = [
         "Switzerland"
     ),
     new Question(
-      "In which country is home to The Eiffel Tower",
+      "In which country is home to The Eiffel Tower?",
       ["Russia", "Netherlands", "France", "Luxembourg"],
       "France"
     ),
@@ -67,7 +67,7 @@ const flagQuiz = [
 //GENERAL KNOWLEDGE QUESTIONS
   const generalQuiz = [
     new Question(
-        "What is the capital of Autralia?",
+        "What is the capital of Australia?",
         ["Sydney", "Melbourne", "Canberra", "Perth"],
         "Canberra"
     ),
@@ -108,7 +108,7 @@ const quizScreen = document.getElementById("quiz");
 const resultsScreen = document.getElementById("results");
 
 const questionEl = document.getElementById("question");
-const answersEl = document.getElementById("answers")
+const answersEl = document.getElementById("answers");
 const nextBtn = document.getElementById("nextBtn");
 
 const progressText = document.getElementById("progress-text");
@@ -175,7 +175,9 @@ function showQuestion(){
 
         answersEl.appendChild(button);
     });
+
     startTimer();
+
 }
 
 //TIMER 

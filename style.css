@@ -7,7 +7,7 @@
   --secondary-color: #123456;
   --tertiary-color: #DAEDF5;
   --button-bg-color: #29465b;
-  --button-bg-hover-color: #36454f;
+  --button-bg-hover-color: #3b5c70;
   --bg-color: #fff;
 }
 
@@ -44,11 +44,7 @@ body {
 
 .screen.active h1 {
   font-size: 50px;
-}
-
-.screen.active p {
-  margin-bottom: 20px;
-  font-size: 20px;
+  margin: 10px;
 }
 
 #start, #home, #results {
@@ -62,6 +58,12 @@ body {
   cursor: pointer;
   background-color: var(--button-bg-color);
   color: var(--bg-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.startBtn:hover {
+  background-color: var(--button-bg-hover-color);
+  transform: scale(1.05);
 }
 
 .quiz-grid {
@@ -75,6 +77,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.progress p {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .timer {
@@ -100,7 +108,22 @@ hr {
 #results h2 {
   font-size: 45px;
   margin: 0;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
+}
+
+#score, #percentage {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+#score {
+  font-size: 20px;
+}
+
+#percentage {
+  font-size: 40px;
+  font-weight: bolder;
+  color: var(--secondary-color);
 }
 
 #question {
@@ -114,6 +137,12 @@ hr {
   background-color: var(--button-bg-color);
   color: var(--bg-color);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--button-bg-hover-color);
+  transform: translateY(-5px);
 }
 
 .answers {
@@ -123,7 +152,7 @@ hr {
 }
 
 button.answer-btn {
-  /*border: 1px ;*/
+  border: 1px solid #bdbdbd;
   border-radius: 10px;
   background-color: var(--bg-color);
   padding: 10px 20px;
@@ -131,9 +160,20 @@ button.answer-btn {
   max-width: 500px;
   cursor: pointer;
   text-align: left;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.answer-btn.correct {
+  background-color: #c7e9c0;
+  transform: scale(1.05);
+}
+
+button.answer-btn.wrong {
+  background-color: #ff7b7b;
 }
 
 #nextBtn {
+  border-radius: 10px;
   margin-top: 20px;
   padding: 10px;
   cursor: pointer;
@@ -147,9 +187,29 @@ button.answer-btn {
 }
 
 .actions button {
+  border-radius: 10px;
   margin-right: 20px;
   padding: 10px;
   background-color: var(--button-bg-color);
   color: var(--bg-color);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.actions button:hover {
+  background-color: var(--button-bg-hover-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+
+  .quiz-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+};
+
